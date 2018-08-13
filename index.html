@@ -1,0 +1,53 @@
+<html>
+<head>
+    <title>David</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="logic.js"></script>
+    <script src="click.js"></script>
+</head>
+<body>
+      
+    <div id="row">  
+        <div class="column">
+                <div class="dropdown">
+                        <button onclick="showDropdown(1)" class="dropbtn" id="Produkt">Produkt</button>
+                          <div id="myDropdown" class="dropdown-content">
+                                <a href="#" onclick="produktF(1)">PF 1090 </a>
+                                <a href="#" onclick="produktF(2)">PV 1090</a>
+                                <a href="#" onclick="produktF(3)">PF 1290</a>
+                                <a href="#" onclick="produktF(4)">PV 1290</a>
+                                <a href="#" onclick="produktF(5)">PF 1290 (Med osb)</a>
+                                <a href="#" onclick="produktF(6)">PV 1290 (Med osb)</a>
+                          </div>
+                </div>
+
+                <div class="dropdown">
+                        <button onclick="showDropdown(2)" class="dropbtn" id="Wall">Väggtyp</button>
+                          <div id="myDropdown2" class="dropdown-content">
+                                <a href="#" onclick="wallF(1)">Vägg till vägg </a>
+                                <a href="#" onclick="wallF(2)">Vägg till dörr</a>
+                                <a href="#" onclick="wallF(3)">Dörr till dörr</a>
+                                <a href="#" onclick="wallF(4)">Ovanstycke dörr/GP</a>
+                          </div>
+                </div>
+                <div class="dropdown">
+                        <p>Väggbredd(meter)</p>
+                        <input id="wid">
+                        <p>Vägghöjd(meter)</p>
+                        <input id="hei">
+                        <p>Antal</p>
+                        <input id="amount">
+                 </div>
+                 <div class="dropdown">
+                     <button onclick="save()" class="dropbtn" id="save">Spara</button>
+                 </div>
+        </div>
+    <div class="column">
+        <h2>Sammanfattning</h2>
+        <ol id="test"></ol>
+    </div>
+
+    </div>
+
+</body>
+</html>
