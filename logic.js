@@ -118,7 +118,7 @@ function wallF(i)
         
        
 
-        
+        widths.splice(this.parentNode.id, 1);
         heights.splice(this.parentNode.id, 1);
         amounts.splice(this.parentNode.id, 1);
         products.splice(this.parentNode.id, 1);
