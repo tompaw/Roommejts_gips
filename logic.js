@@ -101,13 +101,14 @@ function wallF(i)
     
         var entry = document.createElement('li');
         entry.id = counter;
+
         // Ändrar färg beroende på product typ
         if(product === "PF 1090"){
-            entry.style.backgroundColor = "red"; 
+            entry.style.backgroundColor = "#f18973"; 
         }
 
 
-        
+
         counter++;
         
         entry.appendChild(document.createTextNode(product+', '+wallType+', Bredd: '+width+'m, Höjd: '+height+'m, Antal: '+amount+'  '));
@@ -349,3 +350,7 @@ function wallF(i)
     newWindow .document.close()
 
     } 
+
+    function calc(){
+       // beräkna
+    }
