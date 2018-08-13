@@ -1,4 +1,4 @@
-//fisk
+
 var product;
 var wallType;
 var width;
