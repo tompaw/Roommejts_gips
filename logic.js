@@ -106,7 +106,9 @@ function wallF(i)
         if(product === "PF 1090"){
             entry.style.backgroundColor = "#f18973"; 
         }
-
+        if(product === "PF 1290"){
+            entry.style.backgroundColor = "#e4b652"; 
+        }
 
 
         counter++;
