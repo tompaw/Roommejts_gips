@@ -101,10 +101,15 @@ function wallF(i)
     
         var entry = document.createElement('li');
         entry.id = counter;
+        // Ändrar färg beroende på product typ
+        if(product === "PF 1090"){
+            entry.style.backgroundColor = "red"; 
+        }
+
+
+        
         counter++;
         
-
-
         entry.appendChild(document.createTextNode(product+', '+wallType+', Bredd: '+width+'m, Höjd: '+height+'m, Antal: '+amount+'  '));
     
         var btn = document.createElement("Button");
