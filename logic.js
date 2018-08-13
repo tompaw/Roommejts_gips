@@ -5,7 +5,7 @@ var height;
 var amount;
 var wall;
 var counter = 0;
-
+var totArea=0;
 var products = [];
 var wallTypes = [];
 var widths = [];
