@@ -297,7 +297,7 @@ function wallF(i)
             
         }
      }
-     popUp();
+    
      for(i=0; i<productName.length;i++){
        // document.writeln(productName[i],":: ", productQuantity[i],"  ",("<br>"));
      }
@@ -355,4 +355,6 @@ function wallF(i)
 
     function calc(){
        // beräkna
+       pf1090();
+       popUp();
     }
