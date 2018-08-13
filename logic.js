@@ -97,11 +97,6 @@ function wallF(i)
     else{    
         var list = document.getElementById('test');
 
-     //wallType = document.getElementById('Wall').value;
-     //product = document.getElementById('Produkt').value;
-    // width   = document.getElementById('wid').value;
-     //height   = document.getElementById('hei').value;
-
      
     
         var entry = document.createElement('li');
@@ -110,7 +105,7 @@ function wallF(i)
         
 
 
-        entry.appendChild(document.createTextNode('<p>'+product+'</p>, '+wallType+', Bredd: '+width+'m, Höjd: '+height+'m, Antal: '+amount+'  '));
+        entry.appendChild(document.createTextNode(product+', '+wallType+', Bredd: '+width+'m, Höjd: '+height+'m, Antal: '+amount+'  '));
     
         var btn = document.createElement("Button");
         btn.innerHTML = 'Ta bort';
