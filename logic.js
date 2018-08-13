@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 
+=======
+//fisk
+// nob
+>>>>>>> ee8ae4bc8c304d4ac342ad0440b2ef0965190ac0
 var product;
 var wallType;
 var width;
