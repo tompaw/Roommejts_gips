@@ -1,5 +1,3 @@
-//fisk
-// nob
 var product;
 var wallType;
 var width;
@@ -17,6 +15,10 @@ var walls = [];
 
 var productName = [];
 var productQuantity = [];
+
+var knappAlarmProdukt = 0;
+var knappAlarmWall
+
 createMatList();
 
 
@@ -31,6 +33,7 @@ function showDropdown(i) {
 
 function produktF(i)
 {
+    knappAlarmProdukt = 1;
     var e = document.getElementById("Produkt");
 
     if(i == 1){
@@ -64,6 +67,7 @@ function produktF(i)
 
 function wallF(i)
 {
+    knappAlarmWall = 1;
     var e = document.getElementById("Wall");
     if(i == 1){
         e.innerText = "Vägg till vägg";
@@ -87,18 +91,15 @@ function wallF(i)
     width = document.getElementById("wid").value;
     height = document.getElementById("hei").value;
     amount = document.getElementById("amount").value;
-    produkt = document.getElementById("Produkt").innerText = "Produkt";
-    wall = document.getElementById("Wall").innerText = "Väggtyp";
+    
 
-    if(amount == "" || width == "" || height == "" || product == "Produkt" || wall == "Väggtyp" )
+    if(amount == "" || width == "" || height == "" || knappAlarmProdukt != 1 || knappAlarmWall != 1)
     {
         alert("Fyll i alla fält!");
     }
     else{    
         var list = document.getElementById('test');
-
-     
-    
+        
         var entry = document.createElement('li');
         entry.id = counter;
 
