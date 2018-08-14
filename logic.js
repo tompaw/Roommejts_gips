@@ -6,13 +6,15 @@ var amount;
 var wall;
 var counter = 0;
 var totArea=0;
+var totWidth=[];
+var heightMax=0;
 var products = [];
 var wallTypes = [];
 var widths = [];
 var heights = [];
 var amounts = [];
 var walls = [];
-
+var WallList=[];
 var productName = [];
 var productQuantity = [];
 
@@ -169,7 +171,12 @@ function wallF(i)
  {
 
     productQuantity.fill(0);
+    totWidth.fill(0);
+    heightMax=0;
     for(i = 0;i < products.length;i++){
+        if(height>heightMax){
+            heightMax=height;
+        }
         if(products[i].charAt(1) === "F"){ // PROFILFRI VÄGG
             if(walls[i] === "Vägg till vägg"){
                 productQuantity[1] += Math.round((2*widths[i])/0.9+0.49)*amounts[i]; //vitgips PF
@@ -180,6 +187,7 @@ function wallF(i)
                 productQuantity[10] +=2*amounts[i];  //ASPD NCS 0500
                 productQuantity[12] += Math.round(heights[i]/0.225)*Math.round((widths[i]/0.9)-0.49)*amounts[i];  //PFClips
                 productQuantity[13] += Math.round(heights[i]/1.2)*Math.round((widths[i]/0.9)-0.49)*amounts[i]; //SGV-2
+
             }
             else if(walls[i] === "Vägg till dörr"){
                 productQuantity[1] += Math.round((2*widths[i])/0.9+0.49)*amounts[i]; //vitgips PF
@@ -214,25 +222,31 @@ function wallF(i)
                 productQuantity[12] += 0;  //PFClips
                 productQuantity[13] +=0;;// sgv-2
             }
-            if(products[i] === "PF 1290"){
+            
+            if(products[i] === "PF 1290"){//om Pf1290vägg
                 if(walls[i] === "Ovanstycke dörr/GP"){
                     productQuantity[2] +=1
                 }
                 else{
                     productQuantity[2] += Math.round((2*widths[i])/0.9+0.49)*amounts[i];//rågips
                 }
-                
+                totWidth[1]+=widths[i]*amounts[i];
             }
-            else if(products[i] === "PF 1290 (Med osb)"){
+            else if(products[i] === "PF 1290 (Med osb)"){//om Pf1290vägg med osb
                 if(walls[i] === "Ovanstycke dörr/GP"){
                     productQuantity[14] +=1
                 }
                 else{
                     productQuantity[14] += Math.round((2*widths[i])/0.9+0.49)*amounts[i];//rågips
                 }
+                totWidth[2]+=widths[i]*amounts[i];
             }
-
+            else{//om Pf1090vägg
+                totWidth[0]+=widths[i]*amounts[i];
+            }
         }
+
+
         else if(products[i].charAt(1) === "V"){ // PROFILVÄGG
             if(walls[i] === "Vägg till vägg"){
                 productQuantity[0] += Math.round((2*widths[i])/0.9+0.49)*amounts[i]; //vitgips PV
@@ -285,7 +299,7 @@ function wallF(i)
                 else{
                     productQuantity[2] += Math.round((2*widths[i])/0.9+0.49)*amounts[i];//rågips
                 }
-                
+                totWidth[5]+=(widths[i]*amounts[i]);
             }
             else if(products[i] === "PV 1290 (Med osb)"){
                 if(walls[i] === "Ovanstycke dörr/GP"){
@@ -294,6 +308,10 @@ function wallF(i)
                 else{
                     productQuantity[14] += Math.round((2*widths[i])/0.9+0.49)*amounts[i];//rågips
                 }
+                totWidth[4]+=(widths[i]*amounts[i]);
+            }
+            else{// om PV1090
+                totWidth[3]+=(widths[i]*amounts[i]);
             }
             
         }
@@ -308,9 +326,9 @@ function wallF(i)
 
  }
  function createMatList(){
-   productName= ["GLB D 700","GPF D 700","13MM GYPSUMBOARD","SG-2 WITH JOINT STRIP","SZ-2","SD-2","C67",
+   productName= [" GLB D 700","GPF D 700","13MM GYPSUMBOARD","SG-2 WITH JOINT STRIP","SZ-2","SD-2","C67",
                 "AVT-1 NCS 0500","ASP WHITE","ASPV WHITE","ASPD NCS 0500","50 MM MINERAL WOOL","PF-CLIPS","SGV-2","OSB Skiva"];
-    
+    WallList=["PF1090","PF1290","PF1290 m. OSB","PV1090","PV1290","PV1290 m. OSB"];
    for(i=0; i<productName.length;i++){
         productQuantity.push(0);
         //document.write("[",i,"]",":",productName[i]);
@@ -332,6 +350,9 @@ function wallF(i)
         [14]: OSB skiva
         */
    }
+   for(i=0; i<6;i++){
+       totWidth.push(0);
+   }
 
  }
  function popUp(){
@@ -346,10 +367,24 @@ function wallF(i)
 
 
     newWindow.document.open();
+    if(heightMax<2.5){
+        productName[0]="GLB D 700 H.2550";
+        productName[1]="GPF D 700 H.2550";
+    }
+    else if(heightMax<2.7){
+        productName[0]="GLB D 700 H.2750";
+        productName[1]="GPF D 700 H.2750";
+    }
     for(i=0; i<productName.length;i++){
         newWindow.document.writeln(productName[i],":: ", productQuantity[i],"  ",("<br>"));
      }
-    
+     for(i=0; i<6;i++){
+        if(totWidth[i]!=0){
+            newWindow.document.writeln(WallList[i],": ",totWidth[i],("<br>")    );
+        }
+      
+     }
+     newWindow.document.writeln("Högst inmatat höjdmått: ",heightMax,("<br>")    );
     newWindow .document.close()
 
     } 
