@@ -311,7 +311,7 @@ function wallF(i)
                 else{
                     productQuantity[2] += Math.round((2*widths[i])/0.9+0.49)*amounts[i];//rågips
                 }
-                totWidth[5]+=(widths[i]*amounts[i]);
+                totWidth[4]+=(widths[i]*amounts[i]);
             }
             else if(products[i] === "PV 1290 (Med osb)"){
                 if(walls[i] === "Ovanstycke dörr/GP"){
@@ -320,7 +320,7 @@ function wallF(i)
                 else{
                     productQuantity[14] += Math.round((2*widths[i])/0.9+0.49)*amounts[i];//rågips
                 }
-                totWidth[4]+=(widths[i]*amounts[i]);
+                totWidth[5]+=(widths[i]*amounts[i]);
             }
             else{// om PV1090
                 totWidth[3]+=(widths[i]*amounts[i]);
