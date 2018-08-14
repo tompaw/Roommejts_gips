@@ -90,7 +90,7 @@ function wallF(i)
     produkt = document.getElementById("Produkt").innerText = "Produkt";
     wall = document.getElementById("Wall").innerText = "Väggtyp";
 
-    if(amount == "" || width == "" || height == "" || product == "" || wall == "" )
+    if(amount == "" || width == "" || height == "" || product == "Produkt" || wall == "Väggtyp" )
     {
         alert("Fyll i alla fält!");
     }
