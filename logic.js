@@ -107,10 +107,22 @@ function wallF(i)
 
         // Ändrar färg beroende på product typ
         if(product === "PF 1090"){
-            entry.style.backgroundColor = "#f18973"; 
+            entry.style.backgroundColor = "#00c5ff"; 
         }
         if(product === "PF 1290"){
-            entry.style.backgroundColor = "#e4b652"; 
+            entry.style.backgroundColor = "#ffa700"; 
+        }
+        if(product === "PF 1290 (Med osb)"){
+            entry.style.backgroundColor = "#23906c";
+        }
+        if(product === "PV 1090"){
+            entry.style.backgroundColor = "#f0ff00";
+        }
+        if(product === "PV 1290"){
+            entry.style.backgroundColor = "#bd00ff";
+        }
+        if(product === "PV 1290 (Med osb)"){
+            entry.style.backgroundColor = "#09ff00";
         }
 
 
@@ -375,6 +387,11 @@ function wallF(i)
         productName[0]="GLB D 700 H.2750";
         productName[1]="GPF D 700 H.2750";
     }
+    else{
+        productName[0]="GLB D 700 H.3300";
+        productName[1]="GPF D 700 H.3300";
+    }
+    
     for(i=0; i<productName.length;i++){
         newWindow.document.writeln(productName[i],":: ", productQuantity[i],"  ",("<br>"));
      }
