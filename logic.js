@@ -198,9 +198,9 @@ function wallF(i)
     totWidth.fill(0);
     heightMax=0;
     for(i = 0;i < products.length;i++){
-        if(height>heightMax){
-            heightMax=height;
-        }
+        if(heights[i]>heightMax){
+            heightMax=height[i];
+        }  
         if(products[i].charAt(1) === "F"){ // PROFILFRI VÄGG
             if(walls[i] === "Vägg till vägg"){
                 productQuantity[1] += Math.round((2*widths[i])/0.9+0.49)*amounts[i]; //vitgips PF
