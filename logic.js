@@ -169,6 +169,7 @@ function wallF(i)
             counter--;
         
          var newWindow = window.open("","Test","width=300,height=300,scrollbars=1,resizable=1");
+         newWindow.opener = null;
          newWindow .document.open();
          for(i=0; i<products.length;i++){
             newWindow.document.writeln(i+": "+products[i]+", "+walls[i]+", "+widths[i]+", "+heights[i]+", "+amounts[i]+"<br>");
@@ -187,6 +188,15 @@ function wallF(i)
         amounts.push(amount);
         products.push(product);
         walls.push(wallType);
+
+      /*  if(heights.length > 3){
+        for(i = 0; i < heights.length;i++)
+            if(isNaN(heights[i]))
+             document.writeln(heights[i]+ " is not a number. <br>");
+
+             else
+                document.writeln(heights[i]+ " is a number. <br>");
+        }*/
         pf1090();
     }
  }
@@ -199,7 +209,7 @@ function wallF(i)
     heightMax=0;
     for(i = 0;i < products.length;i++){
         if(heights[i]>heightMax){
-            heightMax=height[i];
+            heightMax = heights[i];
         }  
         if(products[i].charAt(1) === "F"){ // PROFILFRI VÄGG
             if(walls[i] === "Vägg till vägg"){
@@ -348,7 +358,11 @@ function wallF(i)
      //   document.writeln(productName[i],":: ", productQuantity[i],"  ",("<br>"));
      //}
 
- }
+     /*if(heights.length > 3){
+     for(i = 0; i < heights.length;i++)
+          document.writeln(heights[i]+" ");
+     }*/
+ }  
  function createMatList(){
    productName= [" GLB D 700","GPF D 700","13MM GYPSUMBOARD","SG-2 WITH JOINT STRIP","SZ-2","SD-2","C67",
                 "AVT-1 NCS 0500","ASP WHITE","ASPV WHITE","ASPD NCS 0500","50 MM MINERAL WOOL","PF-CLIPS","SGV-2","OSB Skiva"];
@@ -381,7 +395,7 @@ function wallF(i)
  }
  function popUp(){
 
-    var newWindow = window.open("","Test","width=300,height=300,scrollbars=1,resizable=1")
+    var newWindow2 = window.open("","Test","width=300,height=300,scrollbars=1,resizable=1")
 
     //read text from textbox placed in parent window
     //var text = document.form.input.value
@@ -390,7 +404,7 @@ function wallF(i)
     //html += "How are you today?</body></html>"
 
 
-    newWindow.document.open();
+    newWindow2.document.open();
     if(heightMax<2.5){
         productName[0]="GLB D 700 H.2550";
         productName[1]="GPF D 700 H.2550";
@@ -405,16 +419,17 @@ function wallF(i)
     }
     
     for(i=0; i<productName.length;i++){
-        newWindow.document.writeln(productName[i],":: ", productQuantity[i],"  ",("<br>"));
+        newWindow2.document.writeln(productName[i],":: ", productQuantity[i],"  ",("<br>"));
      }
      for(i=0; i<6;i++){
         if(totWidth[i]!=0){
-            newWindow.document.writeln(WallList[i],": ",totWidth[i],("<br>")    );
+            newWindow2.document.writeln(WallList[i],": ",totWidth[i],("<br>")    );
         }
       
      }
-     newWindow.document.writeln("Högst inmatat höjdmått: ",heightMax,("<br>")    );
-    newWindow .document.close()
+     
+     newWindow2.document.writeln("Högst inmatat höjdmått: ",heightMax,("<br>")    );
+    newWindow2.document.close()
 
     } 
 
