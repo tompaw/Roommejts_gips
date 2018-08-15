@@ -98,12 +98,12 @@ function wallF(i)
         width = convertStringToDec(width);
         //document.write(width);
     }
-    else if(isNaN(height)){
+    if(isNaN(height)){
         height = convertStringToDec(height);
     }
 
     // Onödig?
-    else if(isNaN(amount)){
+    if(isNaN(amount)){
         amount = convertStringToDec(amount);
     }
 
