@@ -17,7 +17,7 @@ var productName = [];
 var productQuantity = [];
 
 var knappAlarmProdukt = 0;
-var knappAlarmWall
+var knappAlarmWall = 0;
 
 createMatList();
 
@@ -91,7 +91,19 @@ function wallF(i)
     width = document.getElementById("wid").value;
     height = document.getElementById("hei").value;
     amount = document.getElementById("amount").value;
-    
+
+    if(isNaN(width)){
+        width = convertStringToDec(width);
+        document.write(width);
+    }
+    else if(isNaN(height)){
+        height = convertStringToDec(height);
+    }
+
+    // Onödig?
+    else if(isNaN(amount)){
+        amount = convertStringToDec(amount);
+    }
 
     if(amount == "" || width == "" || height == "" || knappAlarmProdukt != 1 || knappAlarmWall != 1)
     {
@@ -358,4 +370,9 @@ function wallF(i)
        // beräkna
        pf1090();
        popUp();
+    }
+
+    function convertStringToDec(number){
+        var tempnbr = parseFloat(number.replace(',','.'));
+        return tempnbr;
     }
