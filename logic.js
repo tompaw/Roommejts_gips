@@ -399,7 +399,7 @@ function wallF(i)
 
 
    // newWindow2.document.open();
-    if(heightMax<2.5){
+   /* if(heightMax<2.5){
         productName[0]="GLB D 700 H.2550";
         productName[1]="GPF D 700 H.2550";
     }
@@ -420,7 +420,7 @@ function wallF(i)
             newWindow2.document.writeln(WallList[i],": ",totWidth[i],("<br>")    );
         }
       
-     }
+     }*/
      
     // newWindow2.document.writeln("Högst inmatat höjdmått: ",heightMax,("<br>")    );
     //newWindow2.document.close()
