@@ -168,13 +168,13 @@ function wallF(i)
             }
             counter--;
         
-         var newWindow = window.open("","Test","width=300,height=300,scrollbars=1,resizable=1");
+       /*  var newWindow = window.open("","Test","width=300,height=300,scrollbars=1,resizable=1");
          
-         newWindow .document.open();
+        newWindow .document.open();
          for(i=0; i<products.length;i++){
             newWindow.document.writeln(i+": "+products[i]+", "+walls[i]+", "+widths[i]+", "+heights[i]+", "+amounts[i]+"<br>");
          }
-        newWindow.document.close();
+        newWindow.document.close();*/
      
         });
     
@@ -399,25 +399,46 @@ function wallF(i)
 
 
    // newWindow2.document.open();
-   /* if(heightMax<2.5){
+    if(heightMax<2.5){
         productName[0]="GLB D 700 H.2550";
         productName[1]="GPF D 700 H.2550";
+        productName[2]="13MM GYPSUMBOARD H.2550";
+        productName[4]="SZ-2 250 H.2500";
+        productName[5]="SD-2 270 H.2700";
+        productName[8]="ASP WHITE H.2500";
     }
     else if(heightMax<2.7){
         productName[0]="GLB D 700 H.2750";
         productName[1]="GPF D 700 H.2750";
+          productName[2]="13MM GYPSUMBOARD H.2750";
+          productName[4]="SZ-2 270 H.2700";
+          productName[5]="SD-2 270 H.2700";
+          productName[8]="ASP WHITE H.2700";
     }
+    else if(heightMax<2.95){
+        productName[0]="GLB D 700 H.3000";
+        productName[1]="GPF D 700 H.3000";
+        productName[2]="13MM GYPSUMBOARD H.3000";
+        productName[4]="SZ-2 300 H.3000";
+        productName[5]="SD-2 310 H.3100";
+        productName[8]="ASP WHITE H.3000";
+    }
+
     else{
         productName[0]="GLB D 700 H.3300";
         productName[1]="GPF D 700 H.3300";
+        productName[2]="13MM GYPSUMBOARD H.3300";
+        productName[4]="SZ-2 330 H.3300";
+        productName[5]="SD-2 360 H.3600";
+        productName[8]="ASP WHITE H.3300";
     }
-    
+    /*
     for(i=0; i<productName.length;i++){
         newWindow2.document.writeln(productName[i],":: ", productQuantity[i],"  ",("<br>"));
      }
      for(i=0; i<6;i++){
         if(totWidth[i]!=0){
-            newWindow2.document.writeln(WallList[i],": ",totWidth[i],("<br>")    );
+            newWindow2.document.writeln(WallList[i],": ",totWidth[i],("<br>"));
         }
       
      }*/
