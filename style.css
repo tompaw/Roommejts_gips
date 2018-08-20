@@ -1,3 +1,4 @@
+
 .dropbtn {
     background-color: #3498DB;
     color: white;
@@ -45,7 +46,7 @@
 
 .column {
     float: left;
-    width: 50%;
+    width: 30%;
     padding: 10px;
 }
 
@@ -54,6 +55,8 @@
     display: table;
     clear: both;
 }
-p.ex {
-    color: rgb(0,0,255);
+#calculationField { 
+    
+    border: 1px solid #000;
+    background-color: #A9A9A9;
 }

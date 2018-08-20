@@ -169,7 +169,7 @@ function wallF(i)
             counter--;
         
          var newWindow = window.open("","Test","width=300,height=300,scrollbars=1,resizable=1");
-         newWindow.opener = null;
+         
          newWindow .document.open();
          for(i=0; i<products.length;i++){
             newWindow.document.writeln(i+": "+products[i]+", "+walls[i]+", "+widths[i]+", "+heights[i]+", "+amounts[i]+"<br>");
@@ -395,16 +395,10 @@ function wallF(i)
  }
  function popUp(){
 
-    var newWindow2 = window.open("","Test","width=300,height=300,scrollbars=1,resizable=1")
-
-    //read text from textbox placed in parent window
-    //var text = document.form.input.value
-
-    //var html = "<html><head></head><body>Hello, <b>"+ text +"</b>."
-    //html += "How are you today?</body></html>"
+    //var newWindow2 = window.open("","Test","width=300,height=300,scrollbars=1,resizable=1")
 
 
-    newWindow2.document.open();
+   // newWindow2.document.open();
     if(heightMax<2.5){
         productName[0]="GLB D 700 H.2550";
         productName[1]="GPF D 700 H.2550";
@@ -428,9 +422,19 @@ function wallF(i)
       
      }
      
-     newWindow2.document.writeln("Högst inmatat höjdmått: ",heightMax,("<br>")    );
-    newWindow2.document.close()
+    // newWindow2.document.writeln("Högst inmatat höjdmått: ",heightMax,("<br>")    );
+    //newWindow2.document.close()
 
+     var output = "<h2>Uträkning</h2>";
+    
+     for(i=0; i<productName.length;i++){
+        output += productName[i]+":: "+productQuantity[i]+"  "+("<br>");
+     }
+
+      output  += "Högst inmatat höjdmått: "+heightMax+"<br>";
+    
+     document.getElementById('calculationField').innerHTML = output;
+     
     } 
 
     function calc(){
