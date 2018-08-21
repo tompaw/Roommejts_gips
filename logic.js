@@ -447,11 +447,23 @@ function wallF(i)
     //newWindow2.document.close()
 
      var output = "<h2>Uträkning</h2>";
-    
+     output  += "Från DEKO: "+"<br>";
      for(i=0; i<productName.length;i++){
-        output += productName[i]+":: "+productQuantity[i]+"  "+("<br>");
+         if(productQuantity[i]!=0 && i!=2 && i!=11&& i!=14){
+            output += productName[i]+":: "+productQuantity[i]+"  "+("<br>");
+         }
+        
      }
-
+     output  += "Från Optimera: "+"<br>";
+     if(productQuantity[2]!=0){
+        output += productName[2]+":: "+productQuantity[2]+"  "+("<br>");
+     }
+     if(productQuantity[11]!=0){
+        output += productName[2]+":: "+productQuantity[2]+"  "+("<br>");
+     }
+     if(productQuantity[14]!=0){
+        output += productName[2]+":: "+productQuantity[2]+"  "+("<br>");
+     }
       output  += "Högst inmatat höjdmått: "+heightMax+"<br>";
     
      document.getElementById('calculationField').innerHTML = output;
