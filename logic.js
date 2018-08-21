@@ -119,19 +119,19 @@ function wallF(i)
 
         // Ändrar färg beroende på product typ
         if(product === "PF 1090"){
-            entry.style.backgroundColor = "#00c5ff"; 
+            entry.style.backgroundColor = "#ffff66"; 
         }
         if(product === "PF 1290"){
-            entry.style.backgroundColor = "#ffa700"; 
+            entry.style.backgroundColor = "#999900"; 
         }
         if(product === "PF 1290 (Med osb)"){
             entry.style.backgroundColor = "#23906c";
         }
         if(product === "PV 1090"){
-            entry.style.backgroundColor = "#f0ff00";
+            entry.style.backgroundColor = "#ee7600";
         }
         if(product === "PV 1290"){
-            entry.style.backgroundColor = "#bd00ff";
+            entry.style.backgroundColor = "#a65200";
         }
         if(product === "PV 1290 (Med osb)"){
             entry.style.backgroundColor = "#09ff00";
