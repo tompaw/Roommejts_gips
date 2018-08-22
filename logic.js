@@ -350,7 +350,13 @@ function wallF(i)
             
         }
      }
-    
+     productQuantity[11]=0;
+     var totWallwidth=0;
+    for(i=0; i<totWidth.length;i++){
+        totWallwidth+=totWidth[i];
+    }
+    productQuantity[11]=Math.round((totWallwidth*heightMax/6.5)+0.49);
+
      for(i=0; i<productName.length;i++){
        // document.writeln(productName[i],":: ", productQuantity[i],"  ",("<br>"));
      }
@@ -364,8 +370,9 @@ function wallF(i)
      }*/
  }  
  function createMatList(){
-   productName= [" GLB D 700","GPF D 700","13MM GYPSUMBOARD","SG-2 WITH JOINT STRIP","SZ-2","SD-2","C67",
-                "AVT-1 NCS 0500","ASP WHITE","ASPV WHITE","ASPD NCS 0500","50 MM MINERAL WOOL","PF-CLIPS","SGV-2","OSB Skiva"];
+   productName= [" GLB D 700","GPF D 700","13MM GYPSUMBOARD","263546 SG-2 WITH JOINT STRIP","SZ-2","SD-2","243373 C67",
+                "991045 AVT-1 L.3m NCS 0500 ","ASP WHITE","324023 ASPV WHITE","324095 ASPD L.3m NCS S 0500-N ",
+                "xxxxxx 50 MM MINERAL WOOL","775655 PF-CLIPS ","263559 SGV-2 L.0,9m","xxxxxx OSB Skiva"];
     WallList=["PF1090","PF1290","PF1290 m. OSB","PV1090","PV1290","PV1290 m. OSB"];
    for(i=0; i<productName.length;i++){
         productQuantity.push(0);
@@ -400,38 +407,39 @@ function wallF(i)
 
    // newWindow2.document.open();
     if(heightMax<2.5){
-        productName[0]="GLB D 700 H.2550";
-        productName[1]="GPF D 700 H.2550";
-        productName[2]="13MM GYPSUMBOARD H.2550";
-        productName[4]="SZ-2 250 H.2500";
-        productName[5]="SD-2 270 H.2700";
-        productName[8]="ASP WHITE H.2500";
+        productName[0]="133011 GLB D 700 H.2550 NCS S 0500-N";
+        productName[1]="123051 GPF D 700 H.2550 NCS S 0500-N";
+        productName[2]="xxxxxx 13MM GYPSUMBOARD H.2550";
+        productName[4]="263511 SZ-2 250 H.2500";
+        productName[5]="263582 SD-2 270 H.2700";
+        productName[8]="324011 ASP WHITE H.2500 NCS S 0500-N";
     }
     else if(heightMax<2.7){
-        productName[0]="GLB D 700 H.2750";
-        productName[1]="GPF D 700 H.2750";
-          productName[2]="13MM GYPSUMBOARD H.2750";
-          productName[4]="SZ-2 270 H.2700";
-          productName[5]="SD-2 270 H.2700";
-          productName[8]="ASP WHITE H.2700";
+        productName[0]="113012 GLB D 700 H.2750 NCS S 0500-N";
+        productName[1]="123052 GPF D 700 H.2750 NCS S 0500-N";
+          productName[2]="xxxxxx 13MM GYPSUMBOARD H.2750"; 
+          productName[4]="263512 SZ-2 270 H.2700";
+          productName[5]="263583 SD-2 270 H.2700";
+          productName[8]="324012 ASP WHITE H.2700 NCS S 0500-N";
     }
     else if(heightMax<2.95){
-        productName[0]="GLB D 700 H.3000";
-        productName[1]="GPF D 700 H.3000";
-        productName[2]="13MM GYPSUMBOARD H.3000";
-        productName[4]="SZ-2 300 H.3000";
-        productName[5]="SD-2 310 H.3100";
-        productName[8]="ASP WHITE H.3000";
+        productName[0]="113013 GLB D 700 H.3000 NCS S 0500-N";
+        productName[1]="123053 GPF D 700 H.3000 NCS S 0500-N";
+        productName[2]="xxxxxx 13MM GYPSUMBOARD H.3000 ";
+        productName[4]="263513 SZ-2 300 H.3000 ";
+        productName[5]="263583 SD-2 310 H.3100 ";
+        productName[8]="324013 ASP WHITE H.3000 NCS S 0500-N";
     }
 
     else{
-        productName[0]="GLB D 700 H.3300";
-        productName[1]="GPF D 700 H.3300";
-        productName[2]="13MM GYPSUMBOARD H.3300";
-        productName[4]="SZ-2 330 H.3300";
-        productName[5]="SD-2 360 H.3600";
-        productName[8]="ASP WHITE H.3300";
+        productName[0]="113015 GLB D 700 H.3300 NCS S 0500-N";
+        productName[1]="123055 GPF D 700 H.3300 NCS S 0500-N";
+        productName[2]="xxxxxx 13MM GYPSUMBOARD H.3300";
+        productName[4]="263516 SZ-2 330 H.3300";
+        productName[5]="263584 SD-2 360 H.3600";
+        productName[8]="324015 ASP WHITE H.3300 NCS S 0500-N";
     }
+
     /*
     for(i=0; i<productName.length;i++){
         newWindow2.document.writeln(productName[i],":: ", productQuantity[i],"  ",("<br>"));
@@ -456,13 +464,13 @@ function wallF(i)
      }
      output  += "Från Optimera: "+"<br>";
      if(productQuantity[2]!=0){
-        output += productName[2]+":: "+productQuantity[2]+"  "+("<br>");
+        output += productName[2]+": "+productQuantity[2]+"  "+("<br>");
      }
      if(productQuantity[11]!=0){
-        output += productName[2]+":: "+productQuantity[2]+"  "+("<br>");
+        output += productName[11]+": "+productQuantity[11]+"  "+("<br>");
      }
      if(productQuantity[14]!=0){
-        output += productName[2]+":: "+productQuantity[2]+"  "+("<br>");
+        output += productName[14]+": "+productQuantity[14]+"  "+("<br>");
      }
       output  += "Högst inmatat höjdmått: "+heightMax+"<br>";
     
