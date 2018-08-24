@@ -87,12 +87,7 @@ function wallF(i)
             e.innerText = "Ovanstycke dörr/GP";
             wallType = "Ovanstycke dörr/GP";
         }
-        else if(i== 5){
-            e.innerText ="Hörn 90";
-            wallType = "Hörn 90";
         }
-
-}
  function save(){
     
     width = document.getElementById("wid").value;
@@ -216,9 +211,6 @@ function wallF(i)
         if(heights[i]>heightMax){
             heightMax = heights[i];
         }  
-        if(products[i]==="Vägg till vägg"||products[i] ==="Vägg till dörr"||products[i]==="Dörr till dörr"){
-
-            
             if(products[i].charAt(1) === "F"){ // PROFILFRI VÄGG
                 if(walls[i] === "Vägg till vägg"){
                     productQuantity[1] += Math.round((2*widths[i])/0.9+0.49)*amounts[i]; //vitgips PF
@@ -348,26 +340,16 @@ function wallF(i)
                         productQuantity[14] +=1
                     }
                     else{
-                        productQuantity[14] += Math.round((2*widths[i])/0.9+0.49)*amounts[i];//osb
+                    productQuantity[14] += Math.round((2*widths[i])/0.9+0.49)*amounts[i];//rågips
                     }
                     totWidth[5]+=(widths[i]*amounts[i]);
-
                 }
                 else{// om PV1090
                     totWidth[3]+=(widths[i]*amounts[i]);
                 }
                 
             }
-          
         }
-        else{// inte Vägg till vägg
-            if(walls[i] === "Hörn 90"){
-                productQuantity[15]+= 1*amounts[i];
-            }
-
-        }
-
-     }
      productQuantity[11]=0;
      var totWallwidth=0;
     for(i=0; i<totWidth.length;i++){
@@ -390,7 +372,7 @@ function wallF(i)
  function createMatList(){
    productName= [" GLB D 700","GPF D 700","13MM GYPSUMBOARD","263546 SG-2 WITH JOINT STRIP","SZ-2","SD-2","243373 C67",
                 "991045 AVT-1 L.3m NCS 0500 ","ASP WHITE","324023 ASPV WHITE","324095 ASPD L.3m NCS S 0500-N ",
-                "xxxxxx 50 MM MINERAL WOOL","775655 PF-CLIPS ","263559 SGV-2 L.0,9m","xxxxxx OSB Skiva","Ahuu 90 outer"];
+                "xxxxxx 50 MM MINERAL WOOL","775655 PF-CLIPS ","263559 SGV-2 L.0,9m","xxxxxx OSB Skiva"];
     WallList=["PF1090","PF1290","PF1290 m. OSB","PV1090","PV1290","PV1290 m. OSB"];
    for(i=0; i<productName.length;i++){
         productQuantity.push(0);
@@ -411,7 +393,6 @@ function wallF(i)
         [12]:PF-CLIPS
         [13]:SGV-2
         [14]: OSB skiva
-        [15]: Ahuu 90 outer
         */
    }
    for(i=0; i<6;i++){
