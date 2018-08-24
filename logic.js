@@ -250,9 +250,9 @@ function wallF(i)
                 productQuantity[3] +=1*amounts[i];/// Stålskena SG-2
                 productQuantity[4] +=0;// SZ-2
                 productQuantity[6] +=0; //c67
-                productQuantity[7] += 2*amounts[i];// AVT-1 0500
-                productQuantity[8] +=2*amounts[i]; //ASP WHITE hprofil u.klack
-                productQuantity[10] +=2*amounts[i];//ASPD NCS 0500
+                productQuantity[7] += 1*amounts[i];// AVT-1 0500
+                productQuantity[8] +=1*amounts[i]; //ASP WHITE hprofil u.klack
+                productQuantity[10] +=1*amounts[i];//ASPD NCS 0500
                 productQuantity[12] += 0;  //PFClips
                 productQuantity[13] +=0;;// sgv-2
             }
@@ -320,9 +320,9 @@ function wallF(i)
                 productQuantity[3] +=1*amounts[i];/// Stålskena SG-2
                 productQuantity[4] +=0;// SZ-2
                 productQuantity[6] +=0; //c67
-                productQuantity[7] += 2*amounts[i];// AVT-1 0500
-                productQuantity[8] +=2*amounts[i]; //ASP WHITE hprofil u.klack
-                productQuantity[10] +=2*amounts[i];//ASPD NCS 0500
+                productQuantity[7] += 1*amounts[i];// AVT-1 0500
+                productQuantity[8] +=1*amounts[i]; //ASP WHITE hprofil u.klack
+                productQuantity[10] +=1*amounts[i];//ASPD NCS 0500
                 productQuantity[12] += 0;  //PFClips
                 productQuantity[13] +=0;;// sgv-2
             }
